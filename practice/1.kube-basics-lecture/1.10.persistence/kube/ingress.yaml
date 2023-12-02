@@ -1,0 +1,16 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fileshare
+spec:
+  rules:
+    - host: fileshare.hello-world.info
+      http:
+        paths:
+        - pathType: ImplementationSpecific
+          backend:
+            service:
+              name: fileshare
+              port:
+                number: 80
